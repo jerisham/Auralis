@@ -1,0 +1,18 @@
+{
+  "name": "auralis",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "build": "turbo run build",
+    "dev:api": "pnpm --filter @auralis/api dev",
+    "dev:web": "pnpm --filter @auralis/web dev",
+    "openapi": "pnpm --filter @auralis/api openapi"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  }
+}

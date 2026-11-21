@@ -1,0 +1,221 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "HealthController_health",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "service": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "health"
+        ]
+      }
+    },
+    "/v1/me": {
+      "get": {
+        "operationId": "FoundationController_me",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "sub": {
+                      "type": "string"
+                    },
+                    "roles": {
+                      "type": "array"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "foundation"
+        ]
+      }
+    },
+    "/v1/admin/ping": {
+      "get": {
+        "operationId": "FoundationController_ping",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "foundation"
+        ]
+      }
+    },
+    "/v1/echo": {
+      "post": {
+        "operationId": "FoundationController_echo",
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "foundation"
+        ]
+      }
+    },
+    "/v1/config/{key}": {
+      "get": {
+        "operationId": "FoundationController_readConfig",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "foundation"
+        ]
+      }
+    },
+    "/v1/admin/config/{key}": {
+      "patch": {
+        "operationId": "FoundationController_writeConfig",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "foundation"
+        ]
+      }
+    },
+    "/webhooks/{provider}": {
+      "post": {
+        "operationId": "WebhookController_receive",
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "webhooks"
+        ]
+      }
+    },
+    "/v1/admin/webhooks/{id}": {
+      "get": {
+        "operationId": "WebhookAdminController_get",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "webhooks"
+        ]
+      }
+    },
+    "/v1/admin/webhooks/{id}/reprocess": {
+      "post": {
+        "operationId": "WebhookAdminController_reprocess",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "tags": [
+          "webhooks"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "Auralis API",
+    "description": "",
+    "version": "0.0.1",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {}
+  }
+}

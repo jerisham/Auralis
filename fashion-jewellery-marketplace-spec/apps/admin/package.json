@@ -1,0 +1,23 @@
+{
+  "name": "@auralis/admin",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3003",
+    "build": "next build",
+    "lint": "tsc --noEmit --pretty false",
+    "typecheck": "tsc --noEmit --pretty false",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "next": "^15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
